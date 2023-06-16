@@ -1,0 +1,129 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+<div class="container-fluid background_1">
+
+    <div class="row justify-content-center">
+        <div class="col-md-4 heading justify-content-center mt-5" style="margin-top: 100px;">
+            <div>
+                <h1>Add Customer Form</h1><br>
+                <img src="../../../assets/pngaaa.com-4390039.png" class="img img-fluid">
+            </div>
+        </div>
+        <div class="col-md-4 mt-5">
+            <form [formGroup]="addEmployeeForm" style="margin-top: 20px;">
+
+                <div class="form-group">
+                    <input type="name" formControlName="firstName" pInputText placeholder="first name">
+                </div>
+
+                <div class="text-danger ms-1" *ngIf="get['firstName'].invalid && get['firstName'].touched">
+
+                    <div *ngIf="get['firstName'].errors &&get['firstName'].errors['required']">
+                        Name is required
+                    </div>
+                    <div *ngIf="get['firstName'].errors &&get['firstName'].errors['minlength']">
+                        min lenght is 5
+                    </div>
+                    <div *ngIf="get['firstName'].errors &&get['firstName'].errors['maxlength']">
+                        max lenght is 15 </div>
+
+                    <div *ngIf="get['firstName'].errors &&get['firstName'].errors['pattern']">
+                        No Special Character</div>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="name" formControlName="lastName" pInputText placeholder="last name">
+                </div>
+
+                <div class="text-danger ms-1" *ngIf="get['lastName'].invalid && get['lastName'].touched">
+
+                    <div *ngIf="get['lastName'].errors &&get['lastName'].errors['required']">
+                        Name is required
+                    </div>
+                    <div *ngIf="get['lastName'].errors &&get['lastName'].errors['minlength']">
+                        min lenght is 5
+                    </div>
+                    <div *ngIf="get['lastName'].errors &&get['lastName'].errors['maxlength']">
+                        max lenght is 15 </div>
+
+                    <div *ngIf="get['lastName'].errors &&get['lastName'].errors['pattern']">
+                        No Special Character</div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <input type="name" formControlName="email"
+                        [class.is-invalid]="get['email'].invalid && get['email'].touched" pInputText
+                        placeholder="Email">
+                </div>
+
+                <div class="text-danger ms-1" *ngIf="get['email'].invalid && get['email'].touched">
+
+                    <div *ngIf="get['email'].errors &&get['email'].errors['required']">
+                        Email is required
+                    </div>
+                    <div *ngIf="get['email'].errors &&get['email'].errors['pattern']">
+                        fill valid email
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="name" formControlName="phone"
+                        [class.is-invalid]="get['phone'].invalid && get['phone'].touched" pInputText
+                        class="p-inputtext-lg" placeholder="Phone">
+                </div>
+
+                <div class="text-danger ms-1" *ngIf="get['phone'].invalid && get['phone'].touched">
+                    <div *ngIf="get['phone'].errors &&get['phone'].errors['required']">
+                        Phone is required
+                    </div>
+                    <div *ngIf="get['phone'].errors &&get['phone'].errors['pattern']">
+                        valid phone number
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <div class="radio-group">
+                        <label for="status-active">
+                            <input type="radio" value="Active" formControlName="status" >
+                            Active
+                        </label>
+                        <label for="status-inactive">
+                            <input type="radio" value="inActive" formControlName="status">
+                            Inactive
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <textarea type="name" formControlName="address"
+                        [class.is-invalid]="get['address'].invalid && get['address'].touched" pInputTextarea rows="30"
+                        cols="30" placeholder="address"  class="custom-textarea" ></textarea>
+                </div>
+
+                <div class="text-danger ms-1" *ngIf="get['address'].invalid && get['address'].touched">
+
+                    <div *ngIf="get['address'].errors &&get['address'].errors['required']">
+                        address is required
+                    </div>
+
+                </div>
+
+
+
+                <div><br>
+                    <button class="btn btn-primary" [disabled]="addEmployeeForm.invalid" (click)="addCustomer()">add customer</button>
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+
+</div>

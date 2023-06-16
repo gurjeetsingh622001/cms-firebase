@@ -1,0 +1,52 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+<div class="container-fluid background_1">
+
+    <div class="row justify-content-center">
+        <div class="col-md-4 background_2">
+            <form [formGroup]="loginForm">
+                <div class="heading justify-content-center">
+                    <h1>Login Form</h1>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Email</label>
+                    <input type="name" formControlName="email" class="form-control"
+                        [class.is-invalid]="get['email'].invalid && get['email'].touched">
+                </div>
+
+                <div class="alert alert-danger" *ngIf="get['email'].invalid && get['email'].touched">
+
+                    <div *ngIf="get['email'].errors &&get['email'].errors['required']">
+                        Email is required
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Password</label>
+                    <input type="password" formControlName="password" class="form-control"
+                        [class.is-invalid]="get['password'].invalid && get['password'].touched">
+                </div>
+
+                <div class="alert alert-danger" *ngIf="get['password'].invalid && get['password'].touched">
+
+                    <div *ngIf="get['password'].errors && get['password'].errors['required']">
+                        Password is required
+                    </div>
+
+                </div>
+
+                <div class="d-grid"><br>
+                    <button class="btn btn-primary" (click)="login()">Login</button>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mt-2">
+                        <a routerLink="/register">create account</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>

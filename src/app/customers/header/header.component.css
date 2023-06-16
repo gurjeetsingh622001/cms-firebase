@@ -1,0 +1,44 @@
+ .bg_1 {
+     background-color: rgb(33, 33, 33);
+ }
+
+ /* * {
+     margin: 0px;
+     padding: 0px;
+ } */
+ .navbar-brand{
+    height:40px
+ }
+ .active{
+    background-color: aqua;
+    border-radius: 10px;
+ }
+ .form-select {
+     margin: 7px;
+     width: 200px;
+     height: 30px;
+     /* Customize the font */
+     font-family: Arial, sans-serif;
+     font-size: 14px;
+     /* Add padding and border */
+     padding: 5px;
+     border: 1px solid #ccc;
+     /* Customize the background and text color */
+     background-color: #fff;
+     color: #333;
+     /* Modify the appearance of the dropdown arrow */
+     appearance: none;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     /* Add a custom background image for the dropdown arrow */
+
+ }
+
+ .custom-select option {
+     /* Customize the font */
+     font-family: Arial, sans-serif;
+     font-size: 14px;
+     /* Customize the background and text color */
+     background-color: #fff;
+     color: #333;
+ }

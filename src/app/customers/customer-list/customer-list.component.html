@@ -1,0 +1,56 @@
+<ngx-spinner type="ball-scale-multiple" backdropColor="rgba(0, 0, 0, 1)"></ngx-spinner>
+
+<div class="mx-2">
+
+    <div *ngIf="!zeroCustomer">
+
+        <div class="card">
+            <p-table [value]="customers" [tableStyle]="{'min-width': '60rem'}">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="firstName" style="width:20%">firstName <p-sortIcon
+                                field="firstName"></p-sortIcon></th>
+                        <th pSortableColumn="lastName" style="width:20%">lastName<p-sortIcon
+                                field="lastName"></p-sortIcon></th>
+                        <th pSortableColumn="email" style="width:20%">Email <p-sortIcon field="email"></p-sortIcon></th>
+                        <th pSortableColumn="phone" style="width:20%">Phone <p-sortIcon field="phone"></p-sortIcon></th>
+                        <th pSortableColumn="status" style="width:20%">status <p-sortIcon field="status"></p-sortIcon>
+                        </th>
+                        <th>delete</th>
+                        <th>edit</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-customer>
+                    <tr>
+                        <td>{{customer.firstName}}</td>
+                        <td>{{customer.lastName}}</td>
+                        <td>{{customer.email}}</td>
+                        <td>{{customer.phone}}</td>
+                        <td>{{customer.status}}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteCustomer(customer.docRefEmail)">
+                                delete
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-success" (click)="editCustomer(customer.docRefEmail)">
+                                edit
+                            </button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+
+    </div>
+    <div *ngIf="zeroCustomer" class="text-center">
+        <div class="card-body mx-auto">
+            <h5 class="card-title">No Customers Available</h5>
+            <p class="card-text">There are no customers to display.</p>
+            <img src="https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/1kutzil5lj0nvfsf_1596544016.jpeg?tr=w-1200,h-900"
+                alt="No Customers Image" class="image"><br> <a routerLink="/customers/addcustomer"
+                class="btn btn-primary">Add Customer</a>
+        </div>
+    </div>
+
+</div>

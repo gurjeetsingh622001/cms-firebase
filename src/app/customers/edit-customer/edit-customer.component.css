@@ -1,0 +1,78 @@
+.heading {
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 149, 255);
+}
+
+.background_1 {
+    height: 720px;
+    background-color: #e2f7ff;
+}
+
+.label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: chocolate;
+}
+
+.alert {
+    font-size: 0.9rem;
+    color: #dc3545;
+    background-color: #f8d7da;
+    padding: 0.2rem;
+    border-radius: 0.25rem;
+}
+
+input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+:host ::ng-deep .p-inputtext {
+    /* add your styles here */
+    width: 400px;
+    height: 50px;
+    font-size: 14px;
+}
+
+
+::ng-deep .ui-inputtext {
+    font-size: 14px;
+    height: 30px;
+    width: 500px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+/* password meter */
+
+
+
+
+.img {
+    height: 200px;
+
+}
+
+.custom-textarea {
+    height: 100px;
+    /* Adjust the height as desired */
+}
+
+h1 {
+    margin-top: 10px;
+    font-size: 2.5rem;
+    font-family: Courier;
+}
+
+.btn {
+    width: 400px;
+}
